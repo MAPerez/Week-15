@@ -1,0 +1,49 @@
+import javax.swing.JOptionPane;
+
+public class DiceGame3
+{
+  public static void main(String[] args)
+	{
+		String message;
+		String userAnswer;
+		int userNumber;
+		int randomNumber;
+		int maxValue;
+
+		TripleDice tripleDice = new TripleDice();
+		TripleDice tripleDice2 = new TripleDice();
+		
+		
+		do
+		{
+			JOptionPane.showMessageDialog(null, "You have rolled three dices" );
+			randomNumber = tripleDice.RollDice();
+			
+			message = String.format("The random number is %d.\n", randomNumber);
+			JOptionPane.showMessageDialog(null,  message );
+			
+			userNumber = Integer.parseInt(JOptionPane.showInputDialog("How many dices do you want? "));
+			maxValue = Integer.parseInt(JOptionPane.showInputDialog("What's the maximum value for each dice? "));
+			
+			randomNumber = tripleDice.RollDice(userNumber, maxValue);
+			
+			message = String.format("The random number is %d.\n", randomNumber);
+			JOptionPane.showMessageDialog(null,  message );
+			
+			
+			JOptionPane.showMessageDialog(null, "You have rolled three dices" );
+			randomNumber = tripleDice2.RollDice();
+			
+			message = String.format("The random number is %d.\n", randomNumber);
+			JOptionPane.showMessageDialog(null,  message );
+			
+			userAnswer = JOptionPane.showInputDialog("Do you want to play again? ");
+			
+		}while(userAnswer.equalsIgnoreCase("Y"));
+		
+		tripleDice.RollCountandPoints();
+		tripleDice2.RollCountandPoints();
+
+	}
+
+}
