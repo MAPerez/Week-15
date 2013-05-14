@@ -1,0 +1,80 @@
+public class TripleDice extends Dice
+{
+  
+  public TripleDice()
+  {
+  	numberOfTimesDiceRolled = 0;
+  	rolled = 0;
+  	numberOfTimesRolled = 0;
+  }
+  
+  public int RollDice()
+  {
+  	numberOfTimesDiceRolled += 3;
+  	rolled += 3;
+  	++numberOfTimesRolled;
+  	
+  	if ( numberOfTimesRolled == 1)
+  	{
+  		 value1 = 1 + (int) (Math.random() * 18 );
+  		 return value1;
+  	}
+  	else if (numberOfTimesRolled == 2)
+  	{
+  		value2 = 1 + (int) (Math.random() * 18 );
+  		return value2;
+  	}
+  	else if (numberOfTimesRolled == 3)
+  	{
+  		value3 = 1 + (int) (Math.random() * 18 );
+  		return value3;
+  	}
+  	else if (numberOfTimesRolled == 4)
+  	{
+  		value4 = 1 + (int) (Math.random() * 18 );
+  		return value4;
+  	}
+  	else if (numberOfTimesRolled == 5)
+  	{
+  		value5 = 1 + (int) (Math.random() * 18 );
+  		return value5;
+  	}
+  	else if (numberOfTimesRolled == 6)
+  	{
+  		value6 = 1 + (int) (Math.random() * 18 );
+  		return value6;
+  	}
+  	else if (numberOfTimesRolled == 7)
+  	{
+  		value7 = 1 + (int) (Math.random() * 18 );
+  		return value7;
+  	}
+  	else if (numberOfTimesRolled == 8)
+  	{
+  		value8 = 1 + (int) (Math.random() * 18 );
+  		return value8;
+  	}
+  	else if (numberOfTimesRolled == 9)
+  	{
+  		value9 = 1 + (int) (Math.random() * 18 );
+  		return value9;
+  	}
+  	else if (numberOfTimesRolled == 10)
+  	{
+  		value10 = 1 + (int) (Math.random() * 18 );
+  		return value10;
+  	}
+  	else
+  	{
+  		return 1 + (int) (Math.random() * 18 );
+  	}
+  }
+  
+  public void ResetDice()
+  {
+  	numberOfTimesDiceRolled = 0;
+  	rolled = 0;
+  	numberOfTimesRolled = 0;
+  }
+
+}
