@@ -1,0 +1,212 @@
+import javax.swing.JOptionPane;
+public class Dice
+{
+  public static int rolled;
+  
+  public static int numberOfTimesRolled;
+  
+  public static int numberOfTimesDiceRolled;
+  
+  public static int value1;
+  public static int value2;
+  public static int value3;
+  public static int value4;
+  public static int value5;
+  public static int value6;
+  public static int value7;
+  public static int value8;
+  public static int value9;
+  public static int value10;
+  
+  public Dice()
+  {
+  	numberOfTimesDiceRolled = 0;
+  	rolled = 0;
+  	numberOfTimesRolled = 0;
+  }
+  
+  public int RollDice()
+  {
+  	++numberOfTimesDiceRolled;
+  	++numberOfTimesRolled;
+  	++rolled;
+  	
+  	if ( numberOfTimesRolled == 1)
+  	{
+  		 value1 = 1 + (int) (Math.random() * 6 );
+  		 return value1;
+  	}
+  	else if (numberOfTimesRolled == 2)
+  	{
+  		value2 = 1 + (int) (Math.random() * 6 );
+  		return value2;
+  	}
+  	else if (numberOfTimesRolled == 3)
+  	{
+  		value3 = 1 + (int) (Math.random() * 6 );
+  		return value3;
+  	}
+  	else if (numberOfTimesRolled == 4)
+  	{
+  		value4 = 1 + (int) (Math.random() * 6 );
+  		return value4;
+  	}
+  	else if (numberOfTimesRolled == 5)
+  	{
+  		value5 = 1 + (int) (Math.random() * 6 );
+  		return value5;
+  	}
+  	else if (numberOfTimesRolled == 6)
+  	{
+  		value6 = 1 + (int) (Math.random() * 6 );
+  		return value6;
+  	}
+  	else if (numberOfTimesRolled == 7)
+  	{
+  		value7 = 1 + (int) (Math.random() * 6 );
+  		return value7;
+  	}
+  	else if (numberOfTimesRolled == 8)
+  	{
+  		value8 = 1 + (int) (Math.random() * 6 );
+  		return value8;
+  	}
+  	else if (numberOfTimesRolled == 9)
+  	{
+  		value9 = 1 + (int) (Math.random() * 6 );
+  		return value9;
+  	}
+  	else if (numberOfTimesRolled == 10)
+  	{
+  		value10 = 1 + (int) (Math.random() * 6 );
+  		return value10;
+  	}
+  	else
+  	{
+  		return 1 + (int) (Math.random() * 6 );
+  	}
+  }
+  
+  
+  public int RollDice(int numberOfDices, int max)
+  {
+  	
+  	rolled += numberOfDices;
+  	numberOfTimesDiceRolled += numberOfDices;
+  	++numberOfTimesRolled;
+  	
+  	int number = numberOfDices * max;
+  	
+  
+  	if ( numberOfTimesRolled == 1)
+  	{
+  		 value1 = 1 + (int) (Math.random() * number );
+  		 return value1;
+  	}
+  	else if (numberOfTimesRolled == 2)
+  	{
+  		value2 = 1 + (int) (Math.random() * number );
+  		return value2;
+  	}
+  	else if (numberOfTimesRolled == 3)
+  	{
+  		value3 = 1 + (int) (Math.random() * number );
+  		return value3;
+  	}
+  	else if (numberOfTimesRolled == 4)
+  	{
+  		value4 = 1 + (int) (Math.random() * number );
+  		return value4;
+  	}
+  	else if (numberOfTimesRolled == 5)
+  	{
+  		value5 = 1 + (int) (Math.random() * number );
+  		return value5;
+  	}
+  	else if (numberOfTimesRolled == 6)
+  	{
+  		value6 = 1 + (int) (Math.random() * number );
+  		return value6;
+  	}
+  	else if (numberOfTimesRolled == 7)
+  	{
+  		value7 = 1 + (int) (Math.random() * number );
+  		return value7;
+  	}
+  	else if (numberOfTimesRolled == 8)
+  	{
+  		value8 = 1 + (int) (Math.random() * number );
+  		return value8;
+  	}
+  	else if (numberOfTimesRolled == 9)
+  	{
+  		value9 = 1 + (int) (Math.random() * number );
+  		return value9;
+  	}
+  	else if (numberOfTimesRolled == 10)
+  	{
+  		value10 = 1 + (int) (Math.random() * number );
+  		return value10;
+  	}
+  	else
+  	{
+  		return 1 + (int) (Math.random() * number );
+  	}
+  	
+  }
+  
+  // only one dice
+  public int RollCount()
+  {
+  	return numberOfTimesDiceRolled;
+  }
+  
+  // all dices rolled
+  public static int RollCountAllDices()
+  {
+  	return rolled;
+  }
+  
+  public static void ResetAllDices()
+  {
+  	numberOfTimesDiceRolled = 0;
+  	rolled = 0;
+  	numberOfTimesRolled = 0;
+  }
+  
+  public static void RollHistory()
+  {
+  	String message = String.format("The previous ten numbers are %d.\n", value1);
+  	JOptionPane.showMessageDialog(null,  message );
+  	
+  	String message2 = String.format("The previous ten numbers are %d.\n",value2);
+  	JOptionPane.showMessageDialog(null,  message2 );
+  	
+  	String message3 = String.format("The previous ten numbers are %d.\n",value3);
+  	JOptionPane.showMessageDialog(null,  message3 );
+  	
+  	String message4 = String.format("The previous ten numbers are %d.\n",value4);
+  	JOptionPane.showMessageDialog(null,  message4 );
+  	
+  	String message5 = String.format("The previous ten numbers are %d.\n",value5);
+  	JOptionPane.showMessageDialog(null,  message5 );
+  	
+  	String message6 = String.format("The previous ten numbers are %d.\n",value6);
+  	JOptionPane.showMessageDialog(null,  message6 );
+  	
+  	String message7 = String.format("The previous ten numbers are %d.\n",value7);
+  	JOptionPane.showMessageDialog(null,  message7 );
+  	
+  	String message8 = String.format("The previous ten numbers are %d.\n",value8);
+  	JOptionPane.showMessageDialog(null,  message8 );
+  	
+  	String message9 = String.format("The previous ten numbers are %d.\n",value9);
+  	JOptionPane.showMessageDialog(null,  message9 );
+  	
+  	String message10 = String.format("The previous ten numbers are %d.\n",value10);
+  	JOptionPane.showMessageDialog(null,  message10 );
+  }
+
+}
+
+
