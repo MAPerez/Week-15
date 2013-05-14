@@ -1,0 +1,97 @@
+import javax.swing.JOptionPane;
+
+public class DiceGame3
+{
+  public static void main(String[] args)
+  {
+  	String message;
+  	String userAnswer;
+  	int randomNumber;
+  	Dice dice = new Dice();
+  	Dice dice2 = new Dice();
+  	Dice dice3 = new Dice();
+  	TripleDice tripleDice = new TripleDice();
+  	TripleDice tripleDice2 = new TripleDice();
+  	
+  	do
+  	{
+
+  		Dice.ResetAllDices();
+  		
+  		JOptionPane.showMessageDialog(null, "You have rolled a dice" );
+  		randomNumber = dice.RollDice();
+  		
+  		message = String.format("The random number is %d.\n", randomNumber);
+  		JOptionPane.showMessageDialog(null,  message );
+  		
+  		
+  		JOptionPane.showMessageDialog(null, "You have rolled a dice" );
+  		randomNumber = dice.RollDice();
+  		
+  		message = String.format("The random number is %d.\n", randomNumber);
+  		JOptionPane.showMessageDialog(null,  message );
+  		
+  		JOptionPane.showMessageDialog(null, "You have rolled a dice" );
+  		randomNumber = dice2.RollDice();
+  		
+  		message = String.format("The random number is %d.\n", randomNumber);
+  		JOptionPane.showMessageDialog(null,  message );
+  		
+  		JOptionPane.showMessageDialog(null, "You have rolled a dice" );
+  		randomNumber = dice2.RollDice();
+  		
+  		message = String.format("The random number is %d.\n", randomNumber);
+  		JOptionPane.showMessageDialog(null,  message );
+  		
+  		
+  		JOptionPane.showMessageDialog(null, "You have rolled a dice" );
+  		randomNumber = dice3.RollDice();
+  		
+  		message = String.format("The random number is %d.\n", randomNumber);
+  		JOptionPane.showMessageDialog(null,  message );
+  		
+  		
+  		JOptionPane.showMessageDialog(null, "You have rolled a dice" );
+  		randomNumber = dice3.RollDice();
+  		
+  		message = String.format("The random number is %d.\n", randomNumber);
+  		JOptionPane.showMessageDialog(null,  message );
+  		
+  		JOptionPane.showMessageDialog(null, "You have rolled three dices" );
+  		randomNumber = tripleDice.RollDice();
+  		
+  		message = String.format("The random number is %d.\n", randomNumber);
+  		JOptionPane.showMessageDialog(null,  message );
+  		
+  		
+  		JOptionPane.showMessageDialog(null, "You have rolled three dices" );
+  		randomNumber = tripleDice.RollDice();
+  		
+  		message = String.format("The random number is %d.\n", randomNumber);
+  		JOptionPane.showMessageDialog(null,  message );
+  		
+  		
+  		JOptionPane.showMessageDialog(null, "You have rolled three dices" );
+  		randomNumber = tripleDice2.RollDice();
+  		
+  		message = String.format("The random number is %d.\n", randomNumber);
+  		JOptionPane.showMessageDialog(null,  message );
+  		
+  		
+  		JOptionPane.showMessageDialog(null, "You have rolled three dices" );
+  		randomNumber =  tripleDice2.RollDice();
+  		
+  		message = String.format("The random number is %d.\n", randomNumber);
+  		JOptionPane.showMessageDialog(null,  message );
+  		
+  		userAnswer = JOptionPane.showInputDialog("Do you want to play again? ");
+  		
+  	}while(userAnswer.equalsIgnoreCase("Y"));
+  	
+  	message = String.format("The total number of times rolled for all dices is %d.\n", Dice. RollCountAllDices());
+  	JOptionPane.showMessageDialog(null,  message );
+  	
+  	Dice.RollHistoryArray();
+  }
+
+}
