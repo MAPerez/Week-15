@@ -1,0 +1,84 @@
+import javax.swing.JOptionPane;
+public class Dice
+{
+  public static int rolled;
+  
+  public static int numberOfTimesRolled;
+  
+  public static int numberOfTimesDiceRolled;
+  
+  public static int[] anArray = new int[10];
+
+  
+  public Dice()
+  {
+  	numberOfTimesDiceRolled = 0;
+  	rolled = 0;
+  	numberOfTimesRolled = 0;
+  }
+  
+  public int RollDice()
+  {
+  	++numberOfTimesDiceRolled;
+  	++rolled;
+  	
+  	int number = 1 + (int) (Math.random() * 6 );
+  	
+  	anArray[numberOfTimesRolled] = number;
+  	
+  	++numberOfTimesRolled;
+  	
+  	return number;
+  	
+  }
+  
+  
+  public int RollDice(int numberOfDices, int max)
+  {
+  	
+  	rolled += numberOfDices;
+  	numberOfTimesDiceRolled += numberOfDices;
+  	
+  	int number = numberOfDices * max;
+  	
+  	int number2 = 1 + (int) (Math.random() * number );
+  	
+  	anArray[numberOfTimesRolled] = number2;
+  	
+  	++numberOfTimesRolled;
+  	
+  	return number2;
+  	
+  }
+  
+  // only one dice
+  public int RollCount()
+  {
+  	return numberOfTimesDiceRolled;
+  }
+  
+  // all dices rolled
+  public static int RollCountAllDices()
+  {
+  	return rolled;
+  }
+  
+  public static void ResetAllDices()
+  {
+  	numberOfTimesDiceRolled = 0;
+  	rolled = 0;
+  	numberOfTimesRolled = 0;
+  }
+  
+  public static void RollHistoryArray()
+  {
+  	for ( int i = 0; i < anArray.length; i++)
+  	{
+  		String message = String.format("%d \n", anArray[i]);
+  		JOptionPane.showMessageDialog(null,  message );
+  	}
+  }
+  
+}
+
+
